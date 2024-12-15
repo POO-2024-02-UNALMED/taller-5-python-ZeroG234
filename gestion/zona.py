@@ -5,7 +5,7 @@ class Zona:
     def __init__(self, nombre: str, zoo: Zoologico = None, animales = []):
         self._nombre = nombre
         self._zoo = zoo
-        self._animales = animales
+        self._animales = animales.copy()
     
     def agregarAnimales(self, nuevoAnimal):
         self._animales.append(nuevoAnimal)
