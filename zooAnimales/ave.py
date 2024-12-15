@@ -1,4 +1,4 @@
-from animal import Animal
+from zooAnimales.animal import Animal
 
 class Ave(Animal):
     _listado = []
@@ -18,13 +18,13 @@ class Ave(Animal):
 
     @classmethod
     def crearHalcon(cls, nombre: str, edad: int, genero: str):
-        cls(nombre, edad, 'montañas', genero, 'café y glorioso')
         cls.halcones += 1
+        return cls(nombre, edad, 'montañas', genero, 'café y glorioso')
 
     @classmethod
-    def crearAguila(cls, nombre: str, edad: int, habitat: str, genero: str, colorPlumas: str):
-        cls(nombre, edad, 'montañas', genero, 'blanco y amarillo')
-        cls.halcones += 1
+    def crearAguila(cls, nombre: str, edad: int, genero: str):
+        cls.aguilas += 1
+        return cls(nombre, edad, 'montañas', genero, 'blanco y amarillo')
 
     def getColorPlumas(self):
         return self._colorPlumas

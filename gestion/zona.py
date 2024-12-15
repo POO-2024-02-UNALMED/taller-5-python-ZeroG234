@@ -1,14 +1,14 @@
-from zoologico import Zoologico
-from zooAnimales.animal import Animal
+from gestion.zoologico import Zoologico
+#from zooAnimales.animal import Animal
 
 class Zona:
-    def __init__(self, nombre: str, zoo: Zoologico, animales = list[Animal]):
+    def __init__(self, nombre: str, zoo: Zoologico = None, animales = []):
         self._nombre = nombre
         self._zoo = zoo
         self._animales = animales
     
-    def agregarAnimales(self, nuevosAnimales: list[Animal]):
-        self._animales += nuevosAnimales
+    def agregarAnimales(self, nuevoAnimal):
+        self._animales.append(nuevoAnimal)
 
     def cantidadAnimales(self):
         return len(self._animales)
@@ -28,5 +28,5 @@ class Zona:
     def getAnimales(self):
         return self._animales
 
-    def setAnimales(self, nuevosAnimales: list[Animal]):
+    def setAnimales(self, nuevosAnimales):
         self._animales = nuevosAnimales

@@ -1,4 +1,4 @@
-from animal import Animal
+from zooAnimales.animal import Animal
 
 class Anfibio(Animal):
     _listado = []
@@ -19,13 +19,13 @@ class Anfibio(Animal):
 
     @classmethod
     def crearRana(cls, nombre: str, edad: int, genero: str):
-        cls(nombre, edad, 'selva', genero, 'rojo', True)
         cls.ranas += 1
+        return cls(nombre, edad, 'selva', genero, 'rojo', True)
 
     @classmethod
     def crearSalamandra(cls, nombre: str, edad: int, genero: str):
-        cls(nombre, edad, 'selva', genero, 'negro y amarillo', False)
         cls.salamandras += 1
+        return cls(nombre, edad, 'selva', genero, 'negro y amarillo', False)
 
     def getColorPiel(self):
         return self._colorPiel
@@ -34,7 +34,7 @@ class Anfibio(Animal):
         self._colorPiel = nuevoColorPiel
 
     def isVenenoso(self):
-        return self._venenos
+        return self._venenoso
 
     @classmethod
     def getListado(cls):
